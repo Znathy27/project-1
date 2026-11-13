@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#101326" />
+  <title>Hello, World!</title>
+  <style>
+    :root { color-scheme: dark; --ink:#f7f7ff; --muted:#b8bdd8; --glow:#8b7cff; }
+    * { box-sizing: border-box; }
+    body {
+      min-height:100vh; margin:0; display:grid; place-items:center; overflow:hidden;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+      color:var(--ink); background:
+        radial-gradient(ellipse at 18% 20%, #5143a8 0, transparent 38%),
+        radial-gradient(ellipse at 85% 78%, #146d83 0, transparent 34%),
+        linear-gradient(135deg,#101326,#171b36 55%,#101b2d);
+    }
+    .orb { position:fixed; width:24rem; aspect-ratio:1; border-radius:50%; filter:blur(2px); opacity:.25; pointer-events:none; animation: float 12s ease-in-out infinite alternate; }
+    .orb.one { top:-12rem; right:-5rem; background:linear-gradient(135deg,#c7a5ff,#6d6aff); }
+    .orb.two { bottom:-15rem; left:-7rem; background:linear-gradient(135deg,#49e1d0,#3e78ff); animation-delay:-5s; }
+    main {
+      position:relative; width:min( min(90vw, 760px), calc(100vw - 32px)); padding:clamp(2.5rem,7vw,5.5rem) 2rem;
+      text-align:center; border:1px solid #ffffff25; border-radius:32px;
+      background:linear-gradient(145deg,#ffffff16,#ffffff08); backdrop-filter:blur(22px);
+      box-shadow:0 28px 90px #05081780, inset 0 1px #ffffff24;
+      animation: rise .9s cubic-bezier(.2,.8,.2,1) both;
+    }
+    .eyebrow { display:inline-flex; gap:.55rem; align-items:center; padding:.5rem .85rem; border:1px solid #ffffff28; border-radius:999px; color:#d9d5ff; font-size:.78rem; letter-spacing:.14em; text-transform:uppercase; }
+    .spark { width:7px; height:7px; border-radius:50%; background:#7fffe0; box-shadow:0 0 14px #7fffe0; }
+    h1 { margin:1.6rem 0 1rem; font-size:clamp(3.2rem,10vw,6.7rem); line-height:.98; letter-spacing:-.075em; font-weight:850; }
+    h1 span { background:linear-gradient(100deg,#fff 12%,#c8c0ff 48%,#7fffe0 95%); -webkit-background-clip:text; background-clip:text; color:transparent; }
+    p { max-width:38rem; margin:0 auto; color:var(--muted); font-size:clamp(1rem,2.5vw,1.2rem); line-height:1.75; }
+    .button { display:inline-flex; align-items:center; gap:.65rem; margin-top:2.1rem; padding:.9rem 1.25rem; color:#11152a; text-decoration:none; font-weight:750; border-radius:999px; background:linear-gradient(100deg,#d8d0ff,#8fffea); box-shadow:0 8px 30px #8b7cff40; transition:transform .2s, box-shadow .2s; }
+    .button:hover { transform:translateY(-3px); box-shadow:0 13px 38px #8b7cff65; }
+    .button:focus-visible { outline:3px solid white; outline-offset:4px; }
+    footer { margin-top:2.5rem; color:#9da4c5; font-size:.78rem; letter-spacing:.04em; }
+    @keyframes rise { from { opacity:0; transform:translateY(24px) scale(.98); } to { opacity:1; transform:translateY(0) scale(1); } }
+    @keyframes float { to { transform:translate3d(-35px,45px,0) scale(1.12); } }
+    @media (prefers-reduced-motion: reduce) { *,*::before,*::after { animation:none !important; transition:none !important; } }
+  </style>
+</head>
+<body>
+  <div class="orb one" aria-hidden="true"></div>
+  <div class="orb two" aria-hidden="true"></div>
+  <main>
+    <div class="eyebrow"><span class="spark"></span> A little something special</div>
+    <h1><span>Hello, World!</span></h1>
+    <p>Your first little corner of the web. Clean, colorful, and ready for whatever you dream up next.</p>
+    <a class="button" href="https://developer.mozilla.org/en-US/docs/Learn/HTML" target="_blank" rel="noreferrer">Explore HTML <span aria-hidden="true">↗</span></a>
+    <footer>MADE WITH ✦ AND A LITTLE BIT OF CSS</footer>
+  </main>
+</body>
+</html>
